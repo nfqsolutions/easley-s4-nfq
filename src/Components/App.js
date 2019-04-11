@@ -1,21 +1,36 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { fetchRepos } from "../../Services/RepoServices";
+import { fetchRepos } from "../Services/RepoServices";
+
 
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { withStyles } from "@material-ui/core/styles";
 
 import Loading from "./Loading";
-import PullReqList from "./PullReqList";
 import Header from "./Header";
+import PullReqList from "./PullReqList";
+import Footer from './Footer';
 
 
 const styles = theme => ({
+  html:{
+    minHeight: "100%",
+    position: "relative"
+  },
+  body:{
+    margin: "0px",
+    marginBottom: "40px"
+  },
   root: {
     flexGrow: 1,
     textAlign: "center"
   },
+  mainContainer:{
+    overflowX: "hidden",
+    overflowY: "hidden"
+  },
+
 });
 
 const themeApp = createMuiTheme({
@@ -38,7 +53,6 @@ const themeApp = createMuiTheme({
   },
 });
 
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -50,9 +64,9 @@ class App extends Component {
         "atlassian-aws-deployment",
         "atlassian-azure-deployment",
         "atlasboard-atlassian-package"
-      ]
-    };
-    this.getPullRequest = this.getPullRequest.bind(this);
+        ]
+      };
+      this.getPullRequest = this.getPullRequest.bind(this);
   }
 
   componentDidMount() {
@@ -61,12 +75,10 @@ class App extends Component {
 
   getPullRequest() {
     let counter = 0;
-
     const showRepo = () => {
       if (counter > this.state.repoNames.length - 1) {
         counter = 0;
       }
-
       let repoName = this.state.repoNames[counter];
 
       fetchRepos(repoName).then(data => {
@@ -75,23 +87,28 @@ class App extends Component {
           dataSize: size
         });
         let apiResults = data.values.map(item => fetch(item.links.self.href));
-        Promise.all(apiResults).then(url => {
-          const responseUrl = url.map(response => response.json());
-          Promise.all(responseUrl).then(urlId => {
-            this.setState({
-              results: urlId
+        Promise.all(apiResults)
+          .then(url => {
+            const responseUrl = url.map(response => response.json());
+              Promise.all(responseUrl)
+                .then(urlId => {
+                  console.log(urlId)
+                  this.setState({
+                    results: urlId
+                  });
+                  counter++;
+              });
             });
-            counter++;
           });
-        });
-      });
-    };
-    showRepo();
-    setInterval(showRepo, 5000);
-  }
+        };
+      showRepo();
+      setInterval(showRepo, 5000);
+    }
+
+  
 
   render() {
-
+    const { classes} = this.props
     const { results, dataSize } = this.state;
 
     if (results) {
@@ -100,11 +117,14 @@ class App extends Component {
           <CssBaseline />
           <MuiThemeProvider theme={themeApp}>
             <header>
-              <Header results={results} dataSize={dataSize} />
+              <Header results={results} dataSize={dataSize}/>
             </header>
-            <main>
-              <PullReqList results={results} />
+            <main className={classes.mainContainer}>
+              <PullReqList results={results}/>
             </main>
+            <footer>
+              <Footer/>
+            </footer>
           </MuiThemeProvider>
         </React.Fragment>
       );
