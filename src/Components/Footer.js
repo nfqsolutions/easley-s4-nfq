@@ -12,31 +12,24 @@ import Fade from '@material-ui/core/Fade';
 import Link from '@material-ui/core/Link';
 
 import {Typography} from '@material-ui/core';
-// import Avatar from '@material-ui/core/Avatar';
 
 const styles = theme => ({
   card: {
     width: "100%",
-    height:"50px",
-    margin:"0px",
-    padding:"0px",
+    height:"60px",
     position: "absolute",
     bottom: "0px",
-    backgroundColor: "#f5f5f5",
+    backgroundColor: "#ffffff",
   },
   cardContent:{
-    margin:"0px",
-    padding:"0px"
   },
   footerPosition:{
     margin:"0px",
-    padding:"0px",
     display: "flex",
     flexDirection: "row",
     justifyContent:"space-around"
   },
   logoContainerNfq:{
-    margin:"0px",
     width:"50px;"
   },
   logoNfq:{
@@ -48,13 +41,11 @@ const styles = theme => ({
   },
   githubContainer:{
     display: "flex",
-    flexDirection: "row",
-    justifyContent:"center",
-    alignItems:"center"
+    alignItems:"center",
   },
   nameAdalaber: {
     textAlign: "center",
-    marginTop: "10px",
+    margin: "8px",
     textTransform: "capitalize",
   },
   footerContainer:{
@@ -63,8 +54,7 @@ const styles = theme => ({
     width: "100%",
   },
   logoContainerAdalab:{
-    margin:"0px",
-    padding:"0px",
+
     width: "100px",
     display:"flex",
     justifyContent: "flex-end",

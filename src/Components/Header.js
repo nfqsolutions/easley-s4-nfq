@@ -5,23 +5,31 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import {Typography} from '@material-ui/core';
 import Avatar from '@material-ui/core/Avatar';
+import Logotipe from '../images/logo-proa.png';
 
 const styles = theme => ({
+  
   titleContainer: {
     display: "flex",
     flexDirection: "row",
     margin: "10px",
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+  },
+  logo:{
+    width: "190",
+    height: "70px",
+    margin: "15px"
   },
   titleRepo: {
     textAlign: "center",
     marginTop: "10px",
     textTransform: "uppercase",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    color: "white"
   },
   size: {
-    backgroundColor: "#ff9800",
+    backgroundColor: "#45a5f5",
     color: "white",
     fontSize: "25px",
     borderRadius: "50%",
@@ -38,7 +46,8 @@ class Header extends Component {
     
     return (
       <Grid item xs={12} className={classes.titleContainer}>
-        <Typography variant="h3" color="primary" className={classes.titleRepo}>
+        <div className={classes.logo}><img src={Logotipe} alt="Logotipe Proa"/></div>
+        <Typography variant="h4" className={classes.titleRepo}>
           {results[0].source.repository.name}
         </Typography>
         <Avatar className={classes.size}>{dataSize}</Avatar>

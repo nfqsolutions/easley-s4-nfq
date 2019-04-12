@@ -16,19 +16,22 @@ import Footer from './Footer';
 const styles = theme => ({
   html:{
     minHeight: "100%",
-    position: "relative"
+    position: "relative",
+    backgroundColor: "#616161"
+
   },
   body:{
     margin: "0px",
-    marginBottom: "40px"
+    marginBottom: "40px",
+
   },
   root: {
     flexGrow: 1,
-    textAlign: "center"
+    textAlign: "center",
   },
   mainContainer:{
     overflowX: "hidden",
-    overflowY: "hidden"
+    overflowY: "hidden",
   },
 
 });
@@ -36,18 +39,20 @@ const styles = theme => ({
 const themeApp = createMuiTheme({
   palette: {
     primary: {
-      main: '#29b6f6',
+      main: '#45a5f5',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#333',
+      main: '#616161',
       contrastText: '#000',
     },
   },
   typography: {
     fontFamily: [
-      'Nunito Sans', 
+      'Krona One', 
       'sans-serif',
+      'Sniglet', 
+      'cursive',
     ].join(','),
     fontSize: 16
   },
@@ -102,7 +107,7 @@ class App extends Component {
           });
         };
       showRepo();
-      setInterval(showRepo, 5000);
+      //setInterval(showRepo, 5000);
     }
 
   
@@ -113,7 +118,7 @@ class App extends Component {
 
     if (results) {
       return (
-        <React.Fragment>
+        <div className={classes.root}>
           <CssBaseline />
           <MuiThemeProvider theme={themeApp}>
             <header>
@@ -126,7 +131,7 @@ class App extends Component {
               <Footer/>
             </footer>
           </MuiThemeProvider>
-        </React.Fragment>
+        </div>
       );
     } else {
       return <Loading />;

@@ -6,18 +6,14 @@ import Grid from '@material-ui/core/Grid';
 
 import PullReqCard from "./PullReqCard";
 
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    textAlign: "center"
-  }
-});
+
+
 class PullReqList extends Component {
   render() {
-    const {classes , results} = this.props;
+    const { results} = this.props;
     
       return (
-        <Grid container className={classes.root} justify="center" alignItems="center" spacing={8}>
+        <Grid container justify="center" alignItems="center" spacing={8}>
           {results.map(item => {
             return (
               <Grid key={item.id} item xs={12}>
@@ -43,8 +39,5 @@ class PullReqList extends Component {
     }
   }
 
-PullReqList.propTypes = {
-  classes: PropTypes.object.isRequired
-};
 
-export default withStyles (styles)(PullReqList);
+export default PullReqList;

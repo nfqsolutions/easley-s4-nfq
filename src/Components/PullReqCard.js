@@ -18,7 +18,7 @@ const styles = theme => ({
     height: "120px",
     margin: "5px",
     padding: "10px",
-    backgroundColor: "#e0e0e0",
+    backgroundColor: "#fff",
   },
   cardContent: {
     display: "flex",
