@@ -22,6 +22,8 @@ const styles = theme => ({
     backgroundColor: "#ffffff",
   },
   cardContent:{
+    padding: 0
+
   },
   footerPosition:{
     margin:"0px",
@@ -30,7 +32,9 @@ const styles = theme => ({
     justifyContent:"space-around"
   },
   logoContainerNfq:{
-    width:"50px;"
+    width:"50px;",
+    padding: "8px"
+
   },
   logoNfq:{
     width:"90px",
@@ -54,7 +58,7 @@ const styles = theme => ({
     width: "100%",
   },
   logoContainerAdalab:{
-
+    padding: "8px",
     width: "100px",
     display:"flex",
     justifyContent: "flex-end",
