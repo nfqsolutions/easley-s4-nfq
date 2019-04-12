@@ -30,8 +30,10 @@ const styles = theme => ({
   },
   size: {
     backgroundColor: "#45a5f5",
+    width: "60px",
+    height: "60px",
     color: "white",
-    fontSize: "25px",
+    fontSize: "22px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",

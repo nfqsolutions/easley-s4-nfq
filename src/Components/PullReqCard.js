@@ -16,7 +16,7 @@ import InformationPr from "./ComponentsCard/InformationPr";
 const styles = theme => ({
   card: {
     height: "120px",
-    margin: "5px",
+    margin: "2px",
     padding: "10px",
     backgroundColor: "#fff",
   },

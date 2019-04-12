@@ -107,7 +107,7 @@ class App extends Component {
           });
         };
       showRepo();
-      //setInterval(showRepo, 5000);
+      setInterval(showRepo, 5000);
     }
 
   
