@@ -1,6 +1,9 @@
-# PR project ✨
+# PROA ✨
+
 ## NFQ + ADALAB PROJECT
+
 ![](src/images/nfq-logo.png) ![](src/images/logo-adalab-80px.png)
+
 1. Clone the repository from GitHub in your computer. Copy the repo link and paste it in your terminal after the command *git clone*, then press enter.
 
 ![](src/images/gitclone.png)
@@ -11,6 +14,13 @@
 ![](src/images/npm_install.png)
 
 3. After these steps, your cloned repository is ready to use! And please don’t forget to make a “pull request” of your branch with modifications. Thanks ;)
+
+## Configuration
+
+You can configure the list of reposotories to be shown and the time between repository view change exporting environment variables prior to execution of scripts.
+
+**REPOS**: [MANDATORY] environment variable with a comma separated string of repository names.
+**TIME_LAP**: [OPTIONAL] environment variable with the number of milliseconds between view changes. Default is 10000ms
 
 ## Available Scripts
 
@@ -48,4 +58,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-

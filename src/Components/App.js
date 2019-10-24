@@ -11,6 +11,7 @@ import Loading from "./Loading";
 import Header from "./Header";
 import PullReqList from "./PullReqList";
 import Footer from './Footer';
+import { environment } from "../environments/environment";
 
 
 const styles = theme => ({
@@ -60,11 +61,7 @@ class App extends Component {
       results: null,
       dataSize: "",
       red: "",
-      repoNames: [
-        "atlassian-aws-deployment",
-        "atlassian-azure-deployment",
-        "atlasboard-atlassian-package"
-        ]
+      repoNames: environment.REPOS
       };
       this.getPullRequest = this.getPullRequest.bind(this);
   }
