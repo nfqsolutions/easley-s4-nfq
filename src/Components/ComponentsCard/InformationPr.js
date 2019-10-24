@@ -7,7 +7,7 @@ import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
   infoContainer:{
-    width: "200px"
+    minWidth: "250px",
   },
   nameAuthor: {
     textAlign: "left",

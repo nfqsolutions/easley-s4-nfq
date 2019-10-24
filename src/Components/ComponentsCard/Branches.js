@@ -7,10 +7,11 @@ import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
   branches: {
-    width: "100px",
+    minWidth: "300px",
+    textAlign: "center",
+    margin: "0 40px 0 60px",
     display: "flex",
     flexDirection: "column",
-    margin: "0 30px",
   },
   fromBranch :{
     overflow: "hidden",
@@ -30,7 +31,7 @@ class Branches extends Component {
     const { classes, fromBranch, toBranch } = this.props; 
 
       return (
-        <Grid item xs={2} className={classes.branches}>
+        <Grid item className={classes.branches}>
           <Typography variant="subtitle2" className={classes.fromBranch} color="secondary">{fromBranch}</Typography>
             <i className="fas fa-arrow-down"/>
           <Typography variant="subtitle2" className={classes.toBranch} color="secondary">{toBranch}</Typography>

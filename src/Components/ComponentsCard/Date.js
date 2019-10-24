@@ -8,10 +8,11 @@ import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
   dateContainer:{
-    marginLeft: "100px",
+    minWidth: "200px",
+    marginLeft: "40px",
     display: "flex",
     flexDirection:"column",
-    alignItems: "center"
+    alignItems: "center",
   },
   date: {
     textAlign: "center",
@@ -71,7 +72,7 @@ class Date extends Component {
     const { classes,date } = this.props; 
 
       return (
-            <Grid container xs={2} className={classes.dateContainer}>
+            <Grid container className={classes.dateContainer}>
               <Grid item>
                 <Typography variant="subtitle2" color="secondary">
                   <div className={classes.date}>

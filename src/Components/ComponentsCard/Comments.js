@@ -7,8 +7,9 @@ import { Typography } from "@material-ui/core";
 
 const styles = theme => ({
   comments: {
-    width: "35px",
-    margin: "0 20px"
+    minWidth: "100px",
+    textAlign: "center",
+    margin: "0 40px",
   }
 });
 

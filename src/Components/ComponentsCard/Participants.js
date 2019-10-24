@@ -12,9 +12,10 @@ const styles = theme => ({
     fontWeight: "bold",
   },
   participantsContainer: {
+    minWidth: "230px",
+    margin: "0 20px",
     display: "flex",
     flexDirection: "column",
-    margin: "0 20px"
   },
   participantsAvatarContainer:{
     display: "flex",
@@ -27,7 +28,7 @@ const styles = theme => ({
   },
   badge: { 
     top: '30%', 
-    right: -3, 
+    right: "5px", 
     backgroundColor: "green",
     color: "white"
   },
@@ -38,19 +39,18 @@ class Participants extends Component {
     const { classes,participants } = this.props; 
 
       return (
-        <Grid container xs={2} className={classes.participantsContainer}>
+        <Grid container className={classes.participantsContainer}>
           <Grid item>
             <Typography className={classes.titleParticipant} variant="subtitle2" color="secondary">
               Approved
             </Typography>
           </Grid>
           <Grid item className={classes.participantsAvatarContainer}>
-            {participants.map((item,img) => {
+            {participants.map((item,index) => {
               if(item.approved===true){
                   return (
-                    <Badge badgeContent={"✔"} classes={{ badge: classes.badge }}>
+                    <Badge badgeContent={"✔"} classes={{ badge: classes.badge }} key={index}>
                       <Avatar
-                        key={img}
                         alt=""
                         src={item.user.links.avatar.href }
                         className={classes.avatarParticipants}

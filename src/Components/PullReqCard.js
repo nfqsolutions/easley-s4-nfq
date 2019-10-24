@@ -17,7 +17,6 @@ const styles = theme => ({
   card: {
     height: "120px",
     margin: "2px",
-    padding: "10px",
     backgroundColor: "#fff",
   },
   cardContent: {

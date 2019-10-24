@@ -12,7 +12,6 @@ import Header from "./Header";
 import PullReqList from "./PullReqList";
 import Footer from './Footer';
 
-
 const styles = theme => ({
   html:{
     minHeight: "100%",
@@ -33,7 +32,16 @@ const styles = theme => ({
     overflowX: "hidden",
     overflowY: "hidden",
   },
-
+  headerContainer: {
+    height: "90px",
+  },
+  footerContainer: {
+    width: "100%",
+    height: "60px",
+    bottom: "0",
+    marginTop: "60px",
+    textAlign: "center",
+  }
 });
 
 const themeApp = createMuiTheme({
@@ -48,8 +56,9 @@ const themeApp = createMuiTheme({
     },
   },
   typography: {
+    useNextVariants: true,
     fontFamily: [
-      'Krona One', 
+      'Roboto', 
       'sans-serif',
       'Sniglet', 
       'cursive',
@@ -66,9 +75,12 @@ class App extends Component {
       dataSize: "",
       red: "",
       repoNames: [
+        "atlaskit-mk-2",
         "atlassian-aws-deployment",
         "atlassian-azure-deployment",
-        "atlasboard-atlassian-package"
+        "atlasboard-atlassian-package",
+        "atlassian-johnson",
+        "almond-intellij-plugin",
         ]
       };
       this.getPullRequest = this.getPullRequest.bind(this);
@@ -121,13 +133,13 @@ class App extends Component {
         <div className={classes.root}>
           <CssBaseline />
           <MuiThemeProvider theme={themeApp}>
-            <header>
+            <header className={classes.headerContainer}>
               <Header results={results} dataSize={dataSize}/>
             </header>
             <main className={classes.mainContainer}>
               <PullReqList results={results}/>
             </main>
-            <footer>
+            <footer className={classes.footerContainer}>
               <Footer/>
             </footer>
           </MuiThemeProvider>

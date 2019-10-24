@@ -11,9 +11,11 @@ const styles = theme => ({
     fontWeight: "bold",
   },
   reviewersContainer: {
+    minWidth: "350px",
+    maxWidth: "400",
+    margin: "0",
     display: "flex",
     flexDirection: "column",
-    margin: "0 20px"
   },
   reviewersAvatarContainer:{
     display: "flex",
@@ -22,7 +24,8 @@ const styles = theme => ({
     alignItems: "center"
   },
   avatarReviewrs: {
-    margin: "5px",
+    margin: "-4px",
+    border: "3px solid white",
   },
 });
 
@@ -31,7 +34,7 @@ class Reviewers extends Component {
     const { classes,reviewers } = this.props; 
 
     return (
-      <Grid container xs={2} className={classes.reviewersContainer}>
+      <Grid container className={classes.reviewersContainer}>
         <Grid item>
           <Typography className={classes.titleReviewers} variant="subtitle2" color="secondary">
             Reviewers

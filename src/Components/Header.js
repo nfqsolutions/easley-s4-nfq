@@ -10,6 +10,7 @@ import Logotipe from '../images/logo-proa.png';
 const styles = theme => ({
   
   titleContainer: {
+    height: "90px",
     display: "flex",
     flexDirection: "row",
     margin: "10px",
@@ -23,22 +24,21 @@ const styles = theme => ({
   },
   titleRepo: {
     textAlign: "center",
-    marginTop: "10px",
     textTransform: "uppercase",
-    fontWeight: "bold",
+    fontWeight: "700",
     color: "white"
   },
   size: {
-    backgroundColor: "#45a5f5",
     width: "60px",
     height: "60px",
+    margin: "15px 20px 21px 0",
+    backgroundColor: "#45a5f5",
     color: "white",
     fontSize: "22px",
     borderRadius: "50%",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    margin:"25px"
   }
 });
 class Header extends Component {
@@ -48,7 +48,9 @@ class Header extends Component {
     
     return (
       <Grid item xs={12} className={classes.titleContainer}>
-        <div className={classes.logo}><img src={Logotipe} alt="Logotipe Proa"/></div>
+        <div>
+          <img src={Logotipe} alt="Logotipe Proa" className={classes.logo}/>
+        </div>
         <Typography variant="h4" className={classes.titleRepo}>
           {results[0].source.repository.name}
         </Typography>
